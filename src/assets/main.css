@@ -1,5 +1,13 @@
 @import './flexbox-util.css';
 
+:root {
+  --primary: #41B883;
+  --secondary: #A8F7D5;
+  --info: #46AFA1;
+  --dark: #34495E;
+  --accent: #FF5954;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -12,6 +20,6 @@ html, body {
   font-size: 20px;
   font-family: sans-serif;
 }
-.app--container--shell {
+.app-container--shell {
   height: 100%;
 }

@@ -1,13 +1,13 @@
 <template>
-  <div class="app--container--shell">
-    <main--container />
+  <div class="app-container--shell">
+    <main-container />
   </div>
 </template>
 
 <script>
 import './assets/main.css';
 
-import Main__Container from './views/Main'
+import Main_Container from './views/Main';
 
 import API_KEY from '../env.js';
 
@@ -15,7 +15,7 @@ import API_KEY from '../env.js';
 export default {
   name: 'app',
   components: {
-    'main--container': Main__Container
+    'main-container': Main_Container
   },
   data() {
     return {
