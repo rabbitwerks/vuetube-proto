@@ -1,13 +1,19 @@
 @import './flexbox-util.css';
 
+@import url('https://fonts.googleapis.com/css?family=Cuprum:400,700');
+
+
 :root {
   --primary: #41B883;
   --secondary: #A8F7D5;
-  --info: #46AFA1;
+  --action: #46AFA1;
   --dark: #34495E;
   --accent: #FF5954;
+  --text-dark: #111111;
+  --text-light: #f7f7f7;
+  --shell: #fbfbfb;
 }
-
+  
 * {
   margin: 0;
   padding: 0;
@@ -18,8 +24,38 @@ html, body {
   height: 100vh;
   width: 100vw;
   font-size: 20px;
-  font-family: sans-serif;
+  font-family: 'Cuprum', sans-serif;
 }
 .app-container--shell {
   height: 100%;
+}
+
+
+.button {
+  border: 0;
+  font-family: 'Cuprum', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+
+.primary {
+  background-color: var(--primary);
+}
+.secondary {
+  background-color: var(--secondary);
+}
+.action {
+  background-color: var(--action);
+}
+.dark {
+  background-color: var(--dark);
+}
+.accent {
+  background-color: var(--accent);
+}
+
+
+.pointer {
+  cursor: pointer;
 }

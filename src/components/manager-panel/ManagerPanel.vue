@@ -1,6 +1,9 @@
 <template>
-  <div class="manager--outer">
+  <div class="manager--outer flexbox flexdir-col">
     <add-video></add-video>
+    <div class="playlist-manager">
+
+    </div>
   </div>
 </template>
 

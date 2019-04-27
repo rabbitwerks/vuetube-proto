@@ -20,11 +20,11 @@ export default {
 .navbar--outer {
   min-height: 3.5rem;
   height: 3.5rem;
-  background-color: #000;
+  background-color: var(--primary);
 }
 .navbar--brand {
   margin-left: 1rem;
-  color: #eee;
-  font-size: 2rem;
+  font-size: 2.5rem;
+  font-weight: 700;
 }
 </style>
