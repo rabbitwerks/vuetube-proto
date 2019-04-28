@@ -7,6 +7,7 @@
   --primary: #41B883;
   --secondary: #A8F7D5;
   --action: #46AFA1;
+  --action--active: rgb(63, 151, 139);
   --dark: #34495E;
   --accent: #FF5954;
   --text-dark: #111111;
@@ -48,6 +49,9 @@ html, body {
 .action {
   background-color: var(--action);
 }
+.action--active {
+  background-color: var(--action);
+}
 .dark {
   background-color: var(--dark);
 }
@@ -59,3 +63,4 @@ html, body {
 .pointer {
   cursor: pointer;
 }
+
