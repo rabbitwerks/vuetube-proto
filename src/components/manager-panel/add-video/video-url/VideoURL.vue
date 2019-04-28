@@ -3,7 +3,8 @@
     <label class="input--label" for="url-input"
       >Video URL
     </label>
-    <input 
+    <input
+      v-model="url"
       type="text" 
       id="url-input"
       class="input--text"
