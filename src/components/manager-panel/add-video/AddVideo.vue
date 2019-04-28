@@ -3,6 +3,7 @@
 
     <div class="add-video--outer">
 
+      <!-- REUSABLE COMPONENT - PANEL HEADER -->
       <div class="panel-header--outer flexbox-space-between align-center">
         <span class="panel-header--text">Add Video</span>
         <div class="collapse-icon--outer pointer">
@@ -14,6 +15,7 @@
       <!-- ADD VIDEO COMPONENT -->
       <div class="add-video--inner flexbox flexdir-col">
 
+        <!-- REUSABLE COMPONENT - INPUT GROUP -> TEXT -->
         <div class="input-group flexbox flexdir-col">
           <label class="input-label" for="url-input"
             >Video URL
@@ -21,6 +23,7 @@
           <input type="text" class="input-text" id="url-input"/>
         </div>
 
+        <!-- PLAYLIST SELECT COMPONENT -->
         <div class="input-group flexbox flexdir-col">
           <label class="input-label" for="playlist-dropdown"
             >Select Playlist
@@ -46,8 +49,8 @@
           </label>
           <div class="preview--inner secondary flexbox flexgap-1">
             
-            <div class="thumbnail--outer flexbox align-end">
-              <img src="https://i.ytimg.com/vi/pmOvwfRMXy0/hqdefault.jpg?sqp=-oaymwEZCPYBEIoBSFXyq4qpAwsIARUAAIhCGAFwAQ==&rs=AOn4CLAEUX-bHrWzZaYpQOwpwWVGEsTZww" alt="" class="thumbnail">
+            <div class="preview--thumbnail--outer flexbox align-end">
+              <img src="https://i.ytimg.com/vi/pmOvwfRMXy0/hqdefault.jpg?sqp=-oaymwEZCPYBEIoBSFXyq4qpAwsIARUAAIhCGAFwAQ==&rs=AOn4CLAEUX-bHrWzZaYpQOwpwWVGEsTZww" alt="" class="preview--thumbnail">
             </div>
 
             <div class="preview--details">
@@ -166,7 +169,7 @@ export default {
   margin-top: .25rem;
   padding: .5rem;
 }
-.thumbnail {
+.preview--thumbnail {
   width: 8rem;
   background: #fff;
 }
