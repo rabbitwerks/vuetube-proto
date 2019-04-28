@@ -11,6 +11,7 @@
         </div>
       </div>
 
+      <!-- ADD VIDEO COMPONENT -->
       <div class="add-video--inner flexbox flexdir-col">
 
         <div class="input-group flexbox flexdir-col">
@@ -38,7 +39,8 @@
           </div>
         </div>
 
-        <div class="preview--outer" v-if="0">
+        <!-- PREVIEW VIDEO COMPONENT -->
+        <div class="preview--outer" v-if="1">
           <label class="preview--label"
             >Video Preview
           </label>
@@ -65,6 +67,26 @@
 
         </div>
 
+        <!-- NEW PLAYLIST COMPONENT -->
+        <div class="new-playlist--outer" v-if="0">
+          <div class="input-group flexbox flexdir-col">
+            <label class="input-label" for="new-playlist--title-input"
+              >New Playlist Title
+            </label>
+            <input type="text" class="input-text" id="new-playlist--title-input"/>
+          </div>
+          <div class="input-group flexbox flexdir-col">
+            <label class="input-label" for="new-playlist--title-input"
+              >New Playlist Description
+            </label>
+            <textarea 
+              id="new-playlist--title-input"
+              class="input-textarea" 
+              rows="3">
+            </textarea>
+          </div>
+        </div>
+
       </div>
     </div>
   </div>
@@ -80,7 +102,6 @@ export default {
       videoPreview: {
         isShowingPreview: true,
         title: '',
-
       }
     }
   }
@@ -114,7 +135,7 @@ export default {
 
 .input-group {
   width: 100%;
-  margin-bottom: 1rem;
+  margin-bottom: .75rem;
 }
 .input-group:last-of-type {
   width: 100%;
@@ -131,9 +152,18 @@ export default {
   font-size: 1.25rem;
   font-family: 'Cuprum';
 }
+.input-textarea {
+  padding: .1rem;
+  font-family: var(--font);
+  resize: vertical;
+}
+.new-playlist--outer > .input-group {
+  margin-bottom: .5rem;
+}
 
 
 .preview--inner {
+  margin-top: .25rem;
   padding: .5rem;
 }
 .thumbnail {
