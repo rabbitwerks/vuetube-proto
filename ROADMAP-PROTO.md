@@ -50,16 +50,17 @@ _a Vue infused Youtube project_
 
 
 ### 0.1 > PROTOTYPE
-* [x] Init Vue.js Project [app]
-  * [x] Basic layout design [app]
-    * [ ] Add Video [cmp]
-      * [ ] Video URL Input [cmp]
-      * [ ] Vuetube Playlist Dropdown [cmp]
-        * [ ] Add to Existing Playlist [cmp]
-          * [ ] Video Info Preview [cmp]
-        * [ ] Add to New Playlist [cmp]
-          * [ ] New Playlist Title [cmp]
-          * [ ] New Playlist Description [cmp]
+
+- * [x] Init Vue.js Project [app]
+  - * [x] Basic layout design [app]
+    - * [x] Add Video [cmp]
+      - * [ ] Video URL Input [cmp]
+      - * [ ] Vuetube Playlist Dropdown [cmp]
+        - * [ ] Add to Existing Playlist [cmp]
+          - * [ ] Video Info Preview [cmp]
+        - * [ ] Add to New Playlist [cmp]
+          - * [ ] New Playlist Title [cmp]
+          - * [ ] New Playlist Description [cmp]
     * [ ] Manage Playlists [cmp]
     * [ ] Playlist [cmp]
     * [ ] Video Grid [cmp]
@@ -86,3 +87,61 @@ _a Vue infused Youtube project_
     * [ ] Checking for Lib
     * [ ] Might use Vanilla [no wrapper pkg]
 
+0. Full Markup?
+1. Skeleton Markup!
+2. Componentize 
+3. Styles Transfer
+4. Props?
+5. Data
+6. Methods
+7. Computed
+8. Watchers..?
+9. Link to Parent
+10. Parent State?
+10.5 VUEX STATE!
+11. Clean Up Component Code
+12. Repeat
+
+### Playlist Object Sketch
+
+```js
+const playlistObject = {
+  _id: Number,
+  title: String,
+  description: String,
+  dateCreated: Date,
+  totalVideos: Number,
+  completedVideos: Number,
+  isFavoritePlaylist: Boolean,
+}
+```
+
+### Video Object Sketch
+
+```js 
+const videoObject = {
+  video_id: String,
+  videoURL: String,
+  title: String,
+  description: String,
+  thumbnailSource: String,
+  videoStats: Object {
+    views: Number,
+    likes: Number,
+  },
+  channel: String,
+  userStats: {
+    isFavoriteVideo: Boolean,
+    hasCompleted: Boolean,
+  }
+}
+```
+
+### User Message Object Sketch
+
+```js
+const userMessageObject = {
+  type: String: ['error', 'success', 'info'],
+  message: String
+}
+```
