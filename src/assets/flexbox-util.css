@@ -20,6 +20,9 @@
 }
 
 /* flex amount classes for children */
+.flex-0 {
+  flex: 0;
+}
 .flex-1 {
   flex: 1;
 }
@@ -82,6 +85,9 @@
 }
 
 /* flex important override default with flex-i */
+.flex-0-i {
+  flex: 1 !important;
+}
 .flex-1-i {
   flex: 1 !important;
 }
@@ -183,6 +189,21 @@
   align-items: flex-start;
 }
 
+/* align classes - shorter class names */
+.align-baseline {
+  align-items: baseline;
+}
+.align-center {
+  align-items: center;
+}
+.align-end {
+  align-items: flex-end;
+}
+.align-start {
+  align-items: flex-start;
+}
+
+/* goes on the child element? double check syntax formatting */
 .flex-align-baseline.align-self {
   align-self: baseline;
 }
@@ -193,6 +214,19 @@
   align-self: flex-end;
 }
 .flex-align-flexstart.align-self {
+  align-self: flex-start;
+}
+
+.align-baseline-self {
+  align-self: baseline;
+}
+.align-center-self {
+  align-self: center;
+}
+.align-end-self {
+  align-self: flex-end;
+}
+.align-start-self {
   align-self: flex-start;
 }
 
