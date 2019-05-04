@@ -12,38 +12,17 @@
         </div>
       </div>
 
-      <!-- ADD VIDEO COMPONENT -->
+      <!-- ADD VIDEO PARENT COMPONENT -->
       <div class="add-video--inner flexbox flexdir-col">
 
-        <!-- REUSABLE COMPONENT - INPUT GROUP -> TEXT -->
-        <div class="input-group flexbox flexdir-col">
-          <label class="input-label" for="url-input"
-            >Video URL
-          </label>
-          <input type="text" class="input-text" id="url-input"/>
-        </div>
+        <!-- ADD VIDEO COMPONENT -->
+        <video-url />
 
         <!-- PLAYLIST SELECT COMPONENT -->
-        <div class="input-group flexbox flexdir-col">
-          <label class="input-label" for="playlist-dropdown"
-            >Select Playlist
-          </label>
-          <div class="add-to-playlist--group flexbox flexgap-2">
-
-            <select id="playlist-dropdown" class="input-text flex-5">
-              <option value="playlist00">Vue Basics</option>
-              <option value="playlist01">Modern Javascript</option>
-              <option value="playlist02">My First Playlist</option> 
-              <option class="dd-new-playlist" value="new-playlist">- - Create New Playlist</option> 
-            </select>
-
-            <button class="button action add-video--button flex-1">Add</button>
-
-          </div>
-        </div>
+        <playlist-select />
 
         <!-- PREVIEW VIDEO COMPONENT -->
-        <div class="preview--outer" v-if="1">
+        <div class="preview--outer" v-if="0">
           <label class="preview--label"
             >Video Preview
           </label>
@@ -71,15 +50,15 @@
         </div>
 
         <!-- NEW PLAYLIST COMPONENT -->
-        <div class="new-playlist--outer" v-if="0">
+        <div class="new-playlist--outer" v-if="1">
           <div class="input-group flexbox flexdir-col">
-            <label class="input-label" for="new-playlist--title-input"
+            <label class="input--label" for="new-playlist--title-input"
               >New Playlist Title
             </label>
-            <input type="text" class="input-text" id="new-playlist--title-input"/>
+            <input type="text" id="new-playlist--title-input"/>
           </div>
           <div class="input-group flexbox flexdir-col">
-            <label class="input-label" for="new-playlist--title-input"
+            <label class="input--label" for="new-playlist--title-input"
               >New Playlist Description
             </label>
             <textarea 
@@ -96,10 +75,14 @@
 </template>
 
 <script>
+import VideoURL from './video-url/VideoURL';
+import PlaylistSelect from './playlist-select/PlaylistSelect';
+
+
 export default {
   data() {
     return {
-      panelIsOpen: true,
+      panelIsOpen: false,
       videoURL: '',
       playlist: '',
       videoPreview: {
@@ -107,6 +90,10 @@ export default {
         title: '',
       }
     }
+  },
+  components: {
+    'video-url': VideoURL,
+    'playlist-select': PlaylistSelect,
   }
 }
 </script>
@@ -144,16 +131,10 @@ export default {
   width: 100%;
   margin-bottom: .25rem;
 }
-.input-label, .preview--label {
+.input--label, .preview--label {
   margin-bottom: .25rem;
   font-size: 1.25rem;
   color: var(--text-light);
-}
-.input-text {
-  height: 2rem;
-  padding: .25rem;
-  font-size: 1.25rem;
-  font-family: 'Cuprum';
 }
 .input-textarea {
   padding: .1rem;
@@ -162,6 +143,11 @@ export default {
 }
 .new-playlist--outer > .input-group {
   margin-bottom: .5rem;
+}
+
+
+.add-video--button:active {
+  background-color: var(--action--active);
 }
 
 
