@@ -22,35 +22,13 @@
         <playlist-select />
 
         <!-- PREVIEW VIDEO COMPONENT -->
-        <div class="preview--outer" v-if="0">
-          <label class="preview--label"
-            >Video Preview
-          </label>
-          <div class="preview--inner secondary flexbox flexgap-1">
-            
-            <div class="preview--thumbnail--outer flexbox align-end">
-              <img src="https://i.ytimg.com/vi/pmOvwfRMXy0/hqdefault.jpg?sqp=-oaymwEZCPYBEIoBSFXyq4qpAwsIARUAAIhCGAFwAQ==&rs=AOn4CLAEUX-bHrWzZaYpQOwpwWVGEsTZww" alt="" class="preview--thumbnail">
-            </div>
-
-            <div class="preview--details">
-              <div class="preview--video-title">
-                Vue.js Basics - Episode 02
-              </div>
-              <div class="preview--channel-title">
-                RabbitWerks Javascript
-              </div>
-              <div class="preview--description--outer">
-                <span class="preview--description--inner">
-                  This video is going to talk about all the cool stuff we can do with Vue. We will only be displaying 2 lines of the description here.
-                </span>
-              </div>
-            </div>
-          </div>
-
-        </div>
+        <preview-video
+          :videoPreview="videoPreview"
+          v-if="videoPreview.isShowingPreview"
+        />
 
         <!-- NEW PLAYLIST COMPONENT -->
-        <div class="new-playlist--outer" v-if="1">
+        <div class="new-playlist--outer" v-if="!videoPreview.isShowingPreview">
           <div class="input-group flexbox flexdir-col">
             <label class="input--label" for="new-playlist--title-input"
               >New Playlist Title
@@ -77,24 +55,35 @@
 <script>
 import VideoURL from './video-url/VideoURL';
 import PlaylistSelect from './playlist-select/PlaylistSelect';
+import PreviewVideo from './preview-video/PreviewVideo';
 
 
 export default {
+  components: {
+    'video-url': VideoURL,
+    'playlist-select': PlaylistSelect,
+    'preview-video': PreviewVideo
+  },
+
   data() {
     return {
       panelIsOpen: false,
       videoURL: '',
-      playlist: '',
+      selectedPlaylist: '',
+
+
+      // will be generated when user inputs valid URL to add video;
+      // fetch video data, display preview;
+      // if ERROR: no resource found, throw User Message: err
       videoPreview: {
         isShowingPreview: true,
-        title: '',
+        title: 'Vue.js Basics - Episode 02',
+        channel: 'RabbitWerks Javascript',
+        truncDescrip: 'This video is going to talk about all the cool stuff we can do with Vue. We will only be displaying 2 lines of the description here.',
+        thumbnail: 'https://i.ytimg.com/vi/pmOvwfRMXy0/hqdefault.jpg?sqp=-oaymwEZCPYBEIoBSFXyq4qpAwsIARUAAIhCGAFwAQ==&rs=AOn4CLAEUX-bHrWzZaYpQOwpwWVGEsTZww'
       }
     }
   },
-  components: {
-    'video-url': VideoURL,
-    'playlist-select': PlaylistSelect,
-  }
 }
 </script>
 
@@ -131,7 +120,7 @@ export default {
   width: 100%;
   margin-bottom: .25rem;
 }
-.input--label, .preview--label {
+.input--label {
   margin-bottom: .25rem;
   font-size: 1.25rem;
   color: var(--text-light);
@@ -151,32 +140,5 @@ export default {
 }
 
 
-.preview--inner {
-  margin-top: .25rem;
-  padding: .5rem;
-}
-.preview--thumbnail {
-  width: 8rem;
-  background: #fff;
-}
-.preview--details {
-  width: 100%;
-}
-.preview--video-title {
-  font-size: 1.3rem;
-  border-bottom: 2px solid black;
-}
-.preview--channel-title {
-  margin-top: .15rem;
-  margin-bottom: -.25rem;
-  font-size: .8rem;
-}
-.preview--description--outer {
-  margin-top: .25rem;
-  font-size: .65rem;
-  background-color: #fff;
-  padding: .15rem;
-  height: 2rem;
-}
 </style>
 
