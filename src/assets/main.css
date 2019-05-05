@@ -86,3 +86,24 @@ input, select, option {
   cursor: pointer;
 }
 
+/* SHARED CLASSES */
+
+/* INPUT CLASSES */
+.input-group {
+  width: 100%;
+  margin-bottom: .75rem;
+}
+.input--label {
+  margin-bottom: .25rem;
+  font-size: 1.25rem;
+  color: var(--text-light);
+}
+.input-textarea {
+  padding: .1rem;
+  font-family: var(--font);
+  resize: vertical;
+}
+.input-group:last-of-type {
+  width: 100%;
+  margin-bottom: .25rem;
+}
