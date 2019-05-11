@@ -1,19 +1,25 @@
 <template>
-  <div class="add-video--shell">
+  <div
+    :class="panelIsOpen ? 'shell--opened' : 'shell-collasped' "
+    class="add-video--shell">
 
     <div class="add-video--outer">
 
       <!-- REUSABLE COMPONENT - PANEL HEADER -->
       <div class="panel-header--outer flexbox-space-between align-center">
         <span class="panel-header--text">Add Video</span>
-        <div class="collapse-icon--outer pointer">
-          <span>hide</span>
-          <!-- <span>show</span> -->
+
+        <div 
+          @click="panelIsOpen = !panelIsOpen" 
+          class="collapse-icon--outer pointer">
+          <span v-if="panelIsOpen">hide</span>
+          <span v-else>show</span>
         </div>
+        
       </div>
 
       <!-- ADD VIDEO PARENT COMPONENT -->
-      <div class="add-video--inner flexbox flexdir-col">
+      <div class="add-video--inner flexbox flexdir-col" v-if="panelIsOpen">
 
         <!-- ADD VIDEO COMPONENT -->
         <video-url />
@@ -52,7 +58,7 @@ export default {
 
   data() {
     return {
-      panelIsOpen: true,
+      panelIsOpen: false,
       // videoURL: '',
       // selectedPlaylist: '', ...,
 
@@ -66,7 +72,7 @@ export default {
         truncDescrip: 'This video is going to talk about all the cool stuff we can do with Vue. We will only be displaying 2 lines of the description here.',
         thumbnail: 'https://i.ytimg.com/vi/pmOvwfRMXy0/hqdefault.jpg?sqp=-oaymwEZCPYBEIoBSFXyq4qpAwsIARUAAIhCGAFwAQ==&rs=AOn4CLAEUX-bHrWzZaYpQOwpwWVGEsTZww'
       },
-      creatingNewPlaylist: true,
+      creatingNewPlaylist: false,
     }
   },
 }
@@ -76,7 +82,12 @@ export default {
 .add-video--shell {
   padding: 1rem;
   background-color: var(--shell);
+}
+.shell--opened {
   min-height: 15rem;
+}
+.shell--collapsed {
+  min-height: 0rem;
 }
 .add-video--outer {
   height: 100%;
