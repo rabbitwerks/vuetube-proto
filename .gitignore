@@ -23,3 +23,5 @@ yarn-error.log*
 # env file
 env.js
 */assets/img
+
+**/reusable/*

@@ -12,6 +12,28 @@ _a Vue infused Youtube project_
 
 ## Development Stories
 
+### **As a Developer:**
+
+> State Management
+* [ ] I want to have a globally accessible state store. [functionality] [state-mgmt]
+  * [ ] I want to use Vuex to handle app state. [state-mgmt]
+    * [ ] I want Vuex to be modularized to feature specific modules. [state-mgmt]
+
+> Add Video
+* [ ] I want to have CMP for users to add video urls to playlists. [feature]
+  * [ ] I want a Text-Input for users to add the URL. [feature]
+    * [ ] I want to have URL validation. [functionality]
+      * [ ] If URL is valid [TRUE]
+        * [ ] Fetch associated video data from Youtube. [functionality]
+        * [ ] Display preview cmp with video data. [feature] [visual]
+      * [ ] If URL is invalid [FALSE]
+        * [ ] Generate an error message for the user. [feature] [visual]
+  * [ ] I want a Select-Input for choosing which playlist to add the video to.
+    * [ ] Each option will be for a specific playlist.
+    * [ ] ?Last/First? option will be for creating a new playlist and adding the video to it.
+  * [ ] I want a button for the user to click, which will add the loaded video into the selected playlist.
+    * [ ] Button should contain text "ADD".
+
 ### **As a User:**
 
 > Playlists
@@ -54,13 +76,13 @@ _a Vue infused Youtube project_
 - * [x] Init Vue.js Project [app]
   - * [x] Basic layout design [app]
     - * [x] Add Video [cmp]
-      - * [ ] Video URL Input [cmp]
-      - * [ ] Vuetube Playlist Dropdown [cmp]
-        - * [ ] Add to Existing Playlist [cmp]
-          - * [ ] Video Info Preview [cmp]
-        - * [ ] Add to New Playlist [cmp]
-          - * [ ] New Playlist Title [cmp]
-          - * [ ] New Playlist Description [cmp]
+      - * [x] Video URL Input [cmp]
+      - * [x] Vuetube Playlist Dropdown [cmp]
+        - * [x] Add to Existing Playlist [cmp]
+          - * [x] Video Info Preview [cmp]
+        - * [x] Add to New Playlist [cmp]
+          - * [x] New Playlist Title [cmp]
+          - * [x] New Playlist Description [cmp]
     * [ ] Manage Playlists [cmp]
     * [ ] Playlist [cmp]
     * [ ] Video Grid [cmp]

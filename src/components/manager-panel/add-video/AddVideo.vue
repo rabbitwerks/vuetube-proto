@@ -15,7 +15,7 @@
           <span v-if="panelIsOpen">hide</span>
           <span v-else>show</span>
         </div>
-        
+
       </div>
 
       <!-- ADD VIDEO PARENT COMPONENT -->
@@ -58,7 +58,7 @@ export default {
 
   data() {
     return {
-      panelIsOpen: false,
+      panelIsOpen: true,
       // videoURL: '',
       // selectedPlaylist: '', ...,
 
