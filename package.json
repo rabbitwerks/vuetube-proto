@@ -11,8 +11,7 @@
     "core-js": "^2.6.5",
     "url-validation": "^2.1.0",
     "vue": "^2.6.6",
-    "vuex": "^3.1.1",
-    "youtube-v3-api": "^1.1.1"
+    "vuex": "^3.1.1"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.5.0",
