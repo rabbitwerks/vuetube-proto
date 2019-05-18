@@ -34,6 +34,11 @@ _a Vue infused Youtube project_
   * [ ] I want a button for the user to click, which will add the loaded video into the selected playlist.
     * [ ] Button should contain text "ADD".
 
+> Node.js Backend
+* [ ] I want to have a Backend built in Node.js
+  * [ ] This will keep API credentials secure and hidden.
+  * [ ] I want backend endpoints for each feature
+
 ### **As a User:**
 
 > Playlists
