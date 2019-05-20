@@ -9,20 +9,18 @@ const store = new Vuex.Store({
   state: {
     addVideo: {
       fetchedVideoData: {},
-      dataLoaded: false,
     },
     playlists: [],
 
   },
   getters: {
-    previewData_GET: state => {
+    rawVideoData_GET: state => {
       return state.addVideo.fetchedVideoData;
     }
   },
   mutations: {
     fetchVideoData_MUTA(state, payload) {
       state.addVideo.fetchedVideoData = payload;
-      state.addVideo.dataLoaded = true;
     }
   },
   actions: {

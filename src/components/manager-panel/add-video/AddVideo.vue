@@ -29,8 +29,7 @@
 
         <!-- PREVIEW VIDEO COMPONENT -->
         <preview-video
-          :videoPreview="videoPreview"
-          v-if="videoPreview.isShowingPreview"
+          :rawVideoData="rawVideoData_GET"
         />
 
         <!-- NEW PLAYLIST COMPONENT -->
@@ -47,6 +46,9 @@ import PlaylistSelect from './playlist-select/PlaylistSelect';
 import PreviewVideo from './preview-video/PreviewVideo';
 import NewPlaylist from './new-playlist/NewPlaylist';
 
+import { mapGetters } from 'vuex';
+ 
+
 
 export default {
   components: {
@@ -55,7 +57,6 @@ export default {
     'preview-video': PreviewVideo,
     'new-playlist': NewPlaylist,
   },
-
   data() {
     return {
       panelIsOpen: true,
@@ -65,15 +66,11 @@ export default {
       // will be generated when user inputs valid URL to add video;
       // fetch video data, display preview;
       // if ERROR: no resource found, throw User Message: err
-      videoPreview: {
-        isShowingPreview: false,
-        title: 'Vue.js Basics - Episode 02',
-        channel: 'RabbitWerks Javascript',
-        truncDescrip: 'This video is going to talk about all the cool stuff we can do with Vue. We will only be displaying 2 lines of the description here.',
-        thumbnail: 'https://i.ytimg.com/vi/pmOvwfRMXy0/hqdefault.jpg?sqp=-oaymwEZCPYBEIoBSFXyq4qpAwsIARUAAIhCGAFwAQ==&rs=AOn4CLAEUX-bHrWzZaYpQOwpwWVGEsTZww'
-      },
       creatingNewPlaylist: false,
     }
+  },
+  computed: {
+    ...mapGetters(['rawVideoData_GET']),
   },
 }
 </script>

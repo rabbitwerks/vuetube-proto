@@ -17,13 +17,18 @@ import API_KEY from '../../../../../env.js';
 import Endpoints, { SEARCH_VIDEO_URL } from '../../../../endpoints.js';
 import isValidURL from 'url-validation';
 
+// import Vuex Helpers
+import { mapActions } from 'vuex';
+
 export default {
   data() {
     return {
       url: '',
       extractedVideoID: '',
-      tempVideoData: {},
     }
+  },
+  methods: {
+    ...mapActions(['fetchVideoData_ACTION'])
   },
   watch: {
     url() {
@@ -41,18 +46,7 @@ export default {
       }
     },
     extractedVideoID() {
-      // fetch data - first param, search url from endpoints.js
-      // we will want to extract this out to a backend endpoint
-      // the backend would hold our sensitive credentials 
-      fetch(`https://www.googleapis.com/youtube/v3/videos?key=${API_KEY}&id=${this.extractedVideoID}&part=snippet,contentDetails,status,statistics,player`)
-        .then(res => res.json())
-        .then(videoData => {
-          this.tempVideoData = videoData.items[0];
-
-          // refactor for passing data to Vuex Store
-          this.$emit('videoDataLoaded', [this.tempVideoData, console.log('custom event "videoDataLoaded" from: ', this.$options._componentTag)]);
-        })
-        .catch(error => console.log(error));
+      this.fetchVideoData_ACTION(this.extractedVideoID);
     }
   }
 }

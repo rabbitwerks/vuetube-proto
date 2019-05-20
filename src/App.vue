@@ -1,6 +1,6 @@
 <template>
   <div class="app-container--shell">
-    <main-container />
+    <Main-Container />
   </div>
 </template>
 
@@ -11,22 +11,9 @@ import Main_Container from './views/Main';
 
 
 export default {
-  name: 'app',
+  name: 'Application',
   components: {
-    'main-container': Main_Container
+    'Main-Container': Main_Container
   },
-  data() {
-    return {
-      data: {
-        channel_id: 'UCyH4i2twA5tdJhZVcSoNZRQ',
-        channelDataRaw: [],
-        channelData: {
-          snippet: {},
-          contentDetails: {},
-          statistics: {},
-        }
-      }
-    }
-  },  
 }
 </script>
