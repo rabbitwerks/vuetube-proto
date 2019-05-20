@@ -52,3 +52,5 @@
   - computing out the preview data from raw
   - working on thumbnail proper display
 - toggling component display based on loaded data or not
+- **TODO:** write vue filter for truncation of text
+- thumbnail displayed properly at 16:9

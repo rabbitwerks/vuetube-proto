@@ -15,24 +15,24 @@ _a Vue infused Youtube project_
 ### **As a Developer:**
 
 > State Management
-* [ ] I want to have a globally accessible state store. [functionality] [state-mgmt]
+* [x] I want to have a globally accessible state store. [functionality] [state-mgmt]
   * [ ] I want to use Vuex to handle app state. [state-mgmt]
     * [ ] I want Vuex to be modularized to feature specific modules. [state-mgmt]
 
 > Add Video
 * [ ] I want to have CMP for users to add video urls to playlists. [feature]
-  * [ ] I want a Text-Input for users to add the URL. [feature]
-    * [ ] I want to have URL validation. [functionality]
-      * [ ] If URL is valid [TRUE]
-        * [ ] Fetch associated video data from Youtube. [functionality]
-        * [ ] Display preview cmp with video data. [feature] [visual]
+  * [x] I want a Text-Input for users to add the URL. [feature]
+    * [x] I want to have URL validation. [functionality]
+      * [x] If URL is valid [TRUE]
+        * [x] Fetch associated video data from Youtube. [functionality]
+        * [x] Display preview cmp with video data. [feature] [visual]
       * [ ] If URL is invalid [FALSE]
         * [ ] Generate an error message for the user. [feature] [visual]
-  * [ ] I want a Select-Input for choosing which playlist to add the video to.
+  * [x] I want a Select-Input for choosing which playlist to add the video to.
     * [ ] Each option will be for a specific playlist.
     * [ ] ?Last/First? option will be for creating a new playlist and adding the video to it.
   * [ ] I want a button for the user to click, which will add the loaded video into the selected playlist.
-    * [ ] Button should contain text "ADD".
+    * [x] Button should contain text "ADD".
 
 > Node.js Backend
 * [ ] I want to have a Backend built in Node.js
@@ -40,6 +40,18 @@ _a Vue infused Youtube project_
   * [ ] I want backend endpoints for each feature
 
 ### **As a User:**
+
+> Add Video
+* [ ] I want to be able to enter a youtube video url to be added to a playlist
+  * [ ] I want to see a preview of the video url I enter
+    * [ ] I want to see the video thumbnail
+    * [ ] I want to see the video title
+    * [ ] I want to see the video description (truncated)
+    * [ ] I want to see the channel title
+  * [ ] I want to see an error message if..
+    * [ ] URL is invalid
+    * [ ] video cannot be found
+  
 
 > Playlists
 * [ ] I want to be able to see a list of my created playlists. [feature] [visual]

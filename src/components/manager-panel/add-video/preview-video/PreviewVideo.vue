@@ -50,16 +50,16 @@ export default {
       }
     },
     videoPreview() {
+      const { snippet } = this.rawVideoData;
       const previewData = {
-        title: this.rawVideoData.snippet.title,
-        description: this.rawVideoData.snippet.description,
+        title: snippet.title,
+        description: snippet.description,
         truncatedDesc: () => {
-          return this.rawVideoData.snippet.description.slice(0, 255) + '...';
+          return snippet.description.slice(0, 200) + '...';
         },
-        thumbnail: this.rawVideoData.snippet.thumbnails.standard,
-        channel: this.rawVideoData.snippet.channelTitle,
+        thumbnail: snippet.thumbnails.medium,
+        channel: snippet.channelTitle,
       };
-
       return previewData;
     }
   }
@@ -82,15 +82,18 @@ export default {
   margin-top: .25rem;
   padding: .5rem;
 }
+.preview--thumbnail--outer {
+  width: 15.5rem;
+}
 .preview--thumbnail {
-  width: 8rem;
+  width: 100%;
   background: #fff;
 }
 .preview--details {
   width: 100%;
 }
 .preview--video-title {
-  font-size: 1.3rem;
+  font-size: 1.15rem;
   border-bottom: 2px solid black;
 }
 .preview--channel-title {
