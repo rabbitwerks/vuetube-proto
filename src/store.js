@@ -14,9 +14,7 @@ const store = new Vuex.Store({
 
   },
   getters: {
-    rawVideoData_GET: state => {
-      return state.addVideo.fetchedVideoData;
-    }
+    rawVideoData_GET: state => state.addVideo.fetchedVideoData,
   },
   mutations: {
     fetchVideoData_MUTA(state, payload) {
