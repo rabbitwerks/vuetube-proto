@@ -37,6 +37,9 @@ export default {
   props: {
     rawVideoData: {
       type: Object,
+      default() {
+        return {}
+      }
     }
   },
   computed: {

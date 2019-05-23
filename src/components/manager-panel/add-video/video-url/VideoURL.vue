@@ -13,8 +13,6 @@
 </template>
 
 <script>
-import API_KEY from '../../../../../env.js';
-import Endpoints, { SEARCH_VIDEO_URL } from '../../../../endpoints.js';
 import isValidURL from 'url-validation';
 
 // import Vuex Helpers
@@ -28,10 +26,18 @@ export default {
     }
   },
   methods: {
-    ...mapActions(['fetchVideoData_ACTION'])
+    ...mapActions([
+      'fetchVideoData_ACTION',
+      'clearFetchedVideoData_ACTION'
+    ])
   },
   watch: {
     url() {
+      // if no URL || cleared input - clear vuex state 'fetchedVideoData'
+      if (!this.url) {
+        this.clearFetchedVideoData_ACTION();
+      }
+      // check input for valid URL, if true, else
       if (isValidURL(this.url)) {
         // splits the url at the first '=' and gets the 2nd index value
         let videoID = this.url.split('=')[1];
@@ -43,6 +49,7 @@ export default {
         this.extractedVideoID = videoID;
       } else {
         console.log('invalid url, please check and try again');
+        this.clearFetchedVideoData_ACTION();
       }
     },
     extractedVideoID() {
