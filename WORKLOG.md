@@ -54,3 +54,14 @@
 - toggling component display based on loaded data or not
 - **TODO:** write vue filter for truncation of text
 - thumbnail displayed properly at 16:9
+
+
+### 5/22/19
+
+- handling URL updates
+  - clearing fetchedVideoData on
+    - invalid URL
+    - no video found
+    - default empty object for prop
+  - swapped hardcoded URL to endpoints.js
+  - removed dead code for fetch req from vue that was moved to vuex

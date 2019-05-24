@@ -29,9 +29,9 @@
 
 <script>
 // 1. extract hardcoded data to parent cmp data
-// 2. pass in as props object
+// 2. pass in as props object, set default as empty object
 // 3. toggle display if loaded
-// 4. 
+
 
 export default {
   props: {
@@ -53,11 +53,13 @@ export default {
       }
     },
     videoPreview() {
+      // destructure snippet from raw data
       const { snippet } = this.rawVideoData;
       const previewData = {
         title: snippet.title,
         description: snippet.description,
         truncatedDesc: () => {
+          // limit descript to 200 chars
           return snippet.description.slice(0, 200) + '...';
         },
         thumbnail: snippet.thumbnails.medium,
