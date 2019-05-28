@@ -51,6 +51,7 @@ _a Vue infused Youtube project_
   * [ ] I want to see an error message if..
     * [ ] URL is invalid
     * [ ] video cannot be found
+  * [ ] I want to see the playlist that I added the video to, load in the playlist panel
   
 
 > Playlists
@@ -100,8 +101,11 @@ _a Vue infused Youtube project_
         - * [x] Add to New Playlist [cmp]
           - * [x] New Playlist Title [cmp]
           - * [x] New Playlist Description [cmp]
-    * [ ] Manage Playlists [cmp]
-    * [ ] Playlist [cmp]
+    * [x] Manage Playlists [cmp]
+      * [x] Playlist Title Bar [cmp]
+      * [x] Playlist Favorite Toggle [cmp]
+      * [x] Playlist Info Bar (details) [cmps]
+    * [] Playlist [cmp]
     * [ ] Video Grid [cmp]
       * [ ] Grid Item [reusable_cmp]
     * [ ] Video View [cmp]

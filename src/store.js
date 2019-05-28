@@ -11,11 +11,46 @@ const store = new Vuex.Store({
     addVideo: {
       fetchedVideoData: {},
     },
-    playlists: [],
+    playlists: [
+      {
+        _id: 0,
+        title: 'Playlist One',
+        description: 'the video description',
+        isFavoritePlaylist: true,
+        details: {
+          dateCreated: '5/25/19',
+          totalVideos: 3,
+          completedVideos: 0,
+        },
+      },
+      {
+        _id: 1,
+        title: 'Playlist Two',
+        description: 'the video description',
+        isFavoritePlaylist: true,
+        details: {
+          dateCreated: '5/25/19',
+          totalVideos: 6,
+          completedVideos: 3,
+        },
+      },
+      {
+        _id: 2,
+        title: 'Playlist Three',
+        description: 'the video description',
+        isFavoritePlaylist: true,
+        details: {
+          dateCreated: '5/25/19',
+          totalVideos: 4,
+          completedVideos: 4,
+        },
+      },
+    ],
 
   },
   getters: {
     rawVideoData_GET: state => state.addVideo.fetchedVideoData,
+    allPlaylists_GET: state => state.playlists,
   },
   mutations: {
     fetchVideoData_MUTA(state, payload) {

@@ -1,18 +1,18 @@
 <template>
   <div class="manager--outer flexbox flexdir-col">
-    <add-video></add-video>
-    <div class="playlist-manager">
-
-    </div>
+    <AddVideo />
+    <ManagePlaylists />
   </div>
 </template>
 
 <script>
 import AddVideo from './add-video/AddVideo';
+import ManagePlaylists from './manage-playlists/ManagePlaylists';
 
 export default {
 components: {
-  'add-video': AddVideo,
+  AddVideo,
+  ManagePlaylists,
 }
 }
 </script>
