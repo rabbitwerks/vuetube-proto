@@ -6,6 +6,7 @@
 :root {
   --primary: #41B883;
   --secondary: #A8F7D5;
+  --secondary--hover: rgb(112, 224, 176);
   --action: #46AFA1;
   --action--active: rgb(63, 151, 139);
   --dark: #34495E;
