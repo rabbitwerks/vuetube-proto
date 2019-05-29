@@ -55,6 +55,7 @@
 - **TODO:** write vue filter for truncation of text
 - thumbnail displayed properly at 16:9
 
+---
 
 ### 5/22/19
 
@@ -66,14 +67,33 @@
   - swapped hardcoded URL to endpoints.js
   - removed dead code for fetch req from vue that was moved to vuex
 
+---
+
 ### 5/25/19
 
 - building initial manage playlists component
   - building out in html
   - componentizing after init markup is made
 
+---
+
 ### 5/27/19
 
 - markup for playlist title
 - markup for favorite toggle
 - starting info bar
+  - video description area
+  - details boxes
+    - date created
+    - completed videos
+    - total videos
+  - favorite playlist toggle start
+    - div built
+    - color change working
+      - not proper, needs refactoring
+
+---
+
+### 5/28/19
+
+

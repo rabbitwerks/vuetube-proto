@@ -3,22 +3,18 @@
     :class="panelIsOpen ? 'shell--opened' : 'shell-collasped'"
     class="manage-playlists--shell flex-1">
 
-    <div class="manage-playlists--outer">
-
-      <!-- REUSABLE COMPONENT - PANEL HEADER -->
-      <div class="panel-header--outer flexbox-space-between align-center">
-        <span class="panel-header--text">My Playlists</span>
-
-        <div 
-          @click="panelIsOpen = !panelIsOpen" 
-          class="collapse-icon--outer pointer">
-          <span v-if="panelIsOpen">hide</span>
-          <span v-else>show</span>
-        </div>
-
+    <!-- REUSABLE COMPONENT - PANEL HEADER -->
+    <div class="panel-header--outer flexbox-space-between align-center">
+      <span class="panel-header--text">My Playlists</span>
+      <div 
+        @click="panelIsOpen = !panelIsOpen" 
+        class="collapse-icon--outer pointer">
+        <span v-if="panelIsOpen">hide</span>
+        <span v-else>show</span>
       </div>
+    </div>
 
-
+    <div class="manage-playlists--outer">
 
       <!-- ############### PLAYLISTS LIST ############### -->
       <div class="manage-playlists--inner" v-if="panelIsOpen">
@@ -34,7 +30,10 @@
                 <div class="title-bar--title flex-1 flexbox flex-align-center">
                   {{ playlist.title }}
                 </div>
-                <div class="title-bar--favorite-toggle action">
+                <div 
+                  class="title-bar--favorite-toggle" 
+                  @click="playlist.isFavoritePlaylist = !playlist.isFavoritePlaylist"
+                  :class=" playlist.isFavoritePlaylist ? 'accent' : 'action' ">
 
                 </div>
               </div>
@@ -64,12 +63,15 @@
                 </div>
               </div>
             </div>
-
-            <div class="pl-item end-of-playlists">
-
-            </div>
-
           </li>
+
+          <!-- ############### END OF PLAYLISTS ############### -->
+          <div class="pl-item end-of-playlists--outer flexbox-space-center flexdir-col">
+            <span class="end-of-playlists--inner">
+              End of Playlists
+            </span>
+          </div>
+
         </ul>
       </div>
 
@@ -109,8 +111,9 @@ export default {
   min-height: 0rem;
 }
 .manage-playlists--outer {
-  height: 100%;
+  height: calc(100% - 3rem);
   background-color: var(--dark);
+  overflow-y: scroll;
 }
 
 
@@ -145,30 +148,40 @@ export default {
   height: 4rem;
 }
 .title-bar--title {
-  background-color: var(--shell);
   height: 2rem;
-  margin-right: 1rem;
+  margin-right: 1rem; 
   padding-left: .25rem;
+  background-color: var(--shell);          
 }
 
 .title-bar--favorite-toggle {
   height: 2rem;
   width: 2rem;
 }
-.pl-item.info-bar--outer > * {
-  margin-bottom: .5rem;
-}
+
 .playlist-description {
   height: 1.25rem;
+  margin-bottom: .5rem;
   padding-left: .25rem;
   background-color: var(--shell);
 }
 
 .playlist-details--outer {
   height: 1.25rem;
+  margin-bottom: 1rem;
 }
 .detail--box {
   padding-left: .25rem;
+}
+
+.end-of-playlists--outer {
+  height: 6rem;
+}
+
+.end-of-playlists--inner {
+  color: var(--text-light);
+  padding: .25rem 2rem;
+  border-bottom: 2px solid var(--secondary);
 }
 
 </style>

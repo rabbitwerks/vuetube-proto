@@ -28,12 +28,14 @@
   Full Screen
   Init Font Size
   Init Font Family
+  Overflow Hidden for Absolute Screen Size
 */
 html, body {
   height: 100vh;
   width: 100vw;
   font-size: 20px;
   font-family: var(--font);
+  overflow: hidden;
 }
 
 /*

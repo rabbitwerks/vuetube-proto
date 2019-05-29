@@ -45,6 +45,28 @@ const store = new Vuex.Store({
           completedVideos: 4,
         },
       },
+      {
+        _id: 3,
+        title: 'Playlist Two',
+        description: 'the video description',
+        isFavoritePlaylist: true,
+        details: {
+          dateCreated: '5/25/19',
+          totalVideos: 6,
+          completedVideos: 3,
+        },
+      },
+      {
+        _id: 4,
+        title: 'Playlist Three',
+        description: 'the video description',
+        isFavoritePlaylist: true,
+        details: {
+          dateCreated: '5/25/19',
+          totalVideos: 4,
+          completedVideos: 4,
+        },
+      },
     ],
 
   },
