@@ -80,6 +80,10 @@ const store = new Vuex.Store({
     },
     clearFetchedVideoData_MUTA(state) {
       state.addVideo.fetchedVideoData = {};
+    },
+
+    toggleAsFavoritePlaylist_MUTA(state, id) {
+      state.playlists[id].isFavoritePlaylist = !state.playlists[id].isFavoritePlaylist;
     }
   },
   actions: {
@@ -100,7 +104,15 @@ const store = new Vuex.Store({
     },
     clearFetchedVideoData_ACTION({commit}) {
       commit('clearFetchedVideoData_MUTA');
-    }
+    },
+
+
+
+
+    toggleAsFavoritePlaylist_ACTION({commit}, payload) {
+      const id = payload;
+      commit('toggleAsFavoritePlaylist_MUTA', id);
+    },
   },
 });
 
