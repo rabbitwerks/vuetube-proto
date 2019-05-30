@@ -106,11 +106,10 @@ const store = new Vuex.Store({
       commit('clearFetchedVideoData_MUTA');
     },
 
-
-
-
+    // Playlists List Item
     toggleAsFavoritePlaylist_ACTION({commit}, payload) {
       const id = payload;
+      console.log('toggleFavoritePlaylist: ', id)
       commit('toggleAsFavoritePlaylist_MUTA', id);
     },
   },

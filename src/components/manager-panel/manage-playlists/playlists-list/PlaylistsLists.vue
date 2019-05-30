@@ -7,19 +7,11 @@
       class="playlists--item--outer flexbox flexdir-col">
 
       <!-- ############### TITLE BAR ############### -->
-      <div class="pl-item title-bar--outer flexbox flex-align-center">
-        <div class="pl-item title-bar--inner flexbox flex-1 flex-align-center">
-          <div class="title-bar--title flex-1 flexbox flex-align-center">
-            {{ playlist.title }}
-          </div>
-          <div 
-            class="title-bar--favorite-toggle" 
-            @click="toggleAsFavoritePlaylist_ACTION(playlist._id)"
-            :class=" playlist.isFavoritePlaylist ? 'accent' : 'action' ">
-
-          </div>
-        </div>
-      </div>
+      <TitleBar
+        :_id="playlist._id"
+        :title="playlist.title"
+        :isFavoritePlaylist="playlist.isFavoritePlaylist"
+      />
 
       <!-- ############### INFO BAR ############### -->
       <div class="pl-item info-bar--outer">
@@ -58,9 +50,14 @@
 </template>
 
 <script>
+import TitleBar from './title-bar/TitleBar';
+
 import { mapGetters, mapActions } from 'vuex';
 
 export default {
+  components: {
+    TitleBar,
+  },
   computed: {
     ...mapGetters([
       'allPlaylists_GET',
@@ -71,7 +68,7 @@ export default {
       'toggleAsFavoritePlaylist_ACTION'
     ]),
     loadPlaylist(id) {
-      console.log(id)
+      console.log('playlist: ', id)
     }
   }
 }
@@ -85,28 +82,13 @@ export default {
 
 .playlists--item--outer {
   padding: 0 1rem;
-  border-bottom: 1px solid #fff;
+  border-bottom: 1px solid var(--dark);
   background-color: var(--secondary);
 }
 .playlists--item--outer:hover {
   background-color: var(--secondary--hover);
 }
 
-
-.pl-item.title-bar--inner {
-  height: 4rem;
-}
-.title-bar--title {
-  height: 2rem;
-  margin-right: 1rem; 
-  padding-left: .25rem;
-  background-color: var(--shell);          
-}
-
-.title-bar--favorite-toggle {
-  height: 2rem;
-  width: 2rem;
-}
 
 .playlist-description {
   height: 1.25rem;
