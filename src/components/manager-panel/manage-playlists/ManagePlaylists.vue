@@ -1,7 +1,7 @@
 <template>
   <div 
-    :class="panelIsOpen ? 'shell--opened' : 'shell-collasped'"
-    class="manage-playlists--shell flex-1">
+    :class="panelIsOpen ? ['shell--opened', 'flex-1'] : 'shell--collasped'"
+    class="manage-playlists--shell">
 
     <!-- REUSABLE COMPONENT - PANEL HEADER -->
     <div class="panel-header--outer flexbox-space-between align-center">
@@ -28,7 +28,7 @@
 
 
 <script>
-import PlaylistsList from './playlists-list/PlaylistsLists';
+import PlaylistsList from './playlists-list-item/PlaylistsList.vue';
 
 import { mapGetters } from 'vuex';
 
@@ -54,7 +54,7 @@ export default {
   min-height: 3rem;
 }
 .shell--collapsed {
-  min-height: 0rem;
+  height: 0rem;
 }
 .manage-playlists--outer {
   height: calc(100% - 3rem);
