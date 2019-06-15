@@ -6,20 +6,20 @@
       :playlist="playlist"
       @click="loadPlaylist(playlist._id)"
     />
-
-    <!-- ############### END OF PLAYLISTS ############### -->
-
-
+    <EndOfPlaylists />
   </ul>
 </template>
 
 <script>
 import Playlist_ListItem from './pl-list-item/Playlist_ListItem.vue';
+import EndOfPlaylists from './end-of-playlists/EndOfPlaylists.vue';
+
 import { mapGetters, mapActions } from 'vuex';
 
 export default {
   components: {
-    'Playlist--ListItem': Playlist_ListItem
+    'Playlist--ListItem': Playlist_ListItem,
+    EndOfPlaylists,
   },
   computed: {
     ...mapGetters([
@@ -30,19 +30,7 @@ export default {
 </script>
 
 <style scoped>
-
 .playlists--wrapper {
   list-style: none;
-}
-
-
-.end-of-playlists--outer {
-  height: 6rem;
-}
-
-.end-of-playlists--inner {
-  color: var(--text-light);
-  padding: .25rem 2rem;
-  border-bottom: 2px solid var(--secondary);
 }
 </style>
