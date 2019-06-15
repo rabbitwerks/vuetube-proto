@@ -96,4 +96,14 @@
 
 ### 5/28/19
 
+- title bar broken out to component
+- clean up code
 
+---
+
+### 5/30/19
+
+- updated playlist object sketch
+  - details -> playlistDetails
+  - video items added
+- mock data changes to reflect video object

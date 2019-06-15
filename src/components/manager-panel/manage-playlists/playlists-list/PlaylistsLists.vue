@@ -22,17 +22,17 @@
           <!-- THIS WILL BE A V-FOR LOOP -->
           <div class="detail--box accent flex-1 flexbox flex-align-center">
             <span class="detail--text">
-              Date Created: {{ playlist.details.dateCreated }}
+              Date Created: {{ playlist.playlistDetails.dateCreated }}
             </span>
           </div>
           <div class="detail--box accent flex-1 flexbox flex-align-center">
             <span class="detail--text">
-              Completed Videos: {{ playlist.details.completedVideos }}
+              Completed Videos: {{ playlist.playlistDetails.completedVideos }}
             </span>
           </div>
           <div class="detail--box accent flex-1 flexbox flex-align-center">
             <span class="detail--text">
-              Total Videos: {{ playlist.details.totalVideos }}
+              Total Videos: {{ playlist.playlistDetails.totalVideos }}
             </span>
           </div>
         </div>

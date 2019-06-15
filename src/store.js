@@ -17,7 +17,7 @@ const store = new Vuex.Store({
         title: 'Playlist One',
         description: 'the video description',
         isFavoritePlaylist: true,
-        details: {
+        playlistDetails: {
           dateCreated: '5/25/19',
           totalVideos: 3,
           completedVideos: 0,
@@ -28,40 +28,77 @@ const store = new Vuex.Store({
         title: 'Playlist Two',
         description: 'the video description',
         isFavoritePlaylist: true,
-        details: {
+        playlistDetails: {
           dateCreated: '5/25/19',
           totalVideos: 6,
           completedVideos: 3,
         },
+        videoItems: [
+          {
+            videoID: 'ss2Sd3d8Zje',
+            videoURL: 'https://www.youtube.com/?v=ss2Sd3d8Zje',
+            title: 'Video Title',
+            description: 'the videos description, a bunch of text, might need to parse for newline and returns',
+            thumbnail: 'thumbnail.link',
+            videoStats: {
+              views: 100000,
+              likes: 1337,
+            },
+            channel: {
+              title: 'Channel Title',
+              url: 'channel.url',
+            },
+            userStats: {
+              isFavoriteVideo: false,
+              hasCompleted: false,
+            }
+          },
+          {
+            videoID: 'ss2Sd3d8Zje',
+            videoURL: 'https://www.youtube.com/?v=ss2Sd3d8Zje',
+            title: 'Video Title',
+            description: 'the videos description, a bunch of text, might need to parse for newline and returns',
+            thumbnail: 'thumbnail.link',
+            videoStats: {
+              views: 100000,
+              likes: 1337,
+            },
+            channel: {
+              title: 'Channel Title',
+              url: 'channel.url',
+            },
+            userStats: {
+              isFavoriteVideo: false,
+              hasCompleted: false,
+            }
+          },
+          {
+            videoID: 'ss2Sd3d8Zje',
+            videoURL: 'https://www.youtube.com/?v=ss2Sd3d8Zje',
+            title: 'Video Title',
+            description: 'the videos description, a bunch of text, might need to parse for newline and returns',
+            thumbnail: 'thumbnail.link',
+            videoStats: {
+              views: 100000,
+              likes: 1337,
+            },
+            channel: {
+              title: 'Channel Title',
+              url: 'channel.url',
+            },
+            userStats: {
+              isFavoriteVideo: false,
+              hasCompleted: false,
+            }
+          }
+        ]
       },
       {
         _id: 2,
         title: 'Playlist Three',
         description: 'the video description',
         isFavoritePlaylist: true,
-        details: {
-          dateCreated: '5/25/19',
-          totalVideos: 4,
-          completedVideos: 4,
-        },
-      },
-      {
-        _id: 3,
-        title: 'Playlist Two',
-        description: 'the video description',
-        isFavoritePlaylist: true,
-        details: {
-          dateCreated: '5/25/19',
-          totalVideos: 6,
-          completedVideos: 3,
-        },
-      },
-      {
-        _id: 4,
-        title: 'Playlist Three',
-        description: 'the video description',
-        isFavoritePlaylist: true,
-        details: {
+        playlistDetails: {
           dateCreated: '5/25/19',
           totalVideos: 4,
           completedVideos: 4,

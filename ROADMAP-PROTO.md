@@ -88,19 +88,18 @@ _a Vue infused Youtube project_
     * [ ] I want to see how many likes the video has [visual]
     * [ ] I want to be able to open the video in youtube [action]
 
-
 ### 0.1 > PROTOTYPE
 
-- * [x] Init Vue.js Project [app]
-  - * [x] Basic layout design [app]
-    - * [x] Add Video [cmp]
-      - * [x] Video URL Input [cmp]
-      - * [x] Vuetube Playlist Dropdown [cmp]
-        - * [x] Add to Existing Playlist [cmp]
-          - * [x] Video Info Preview [cmp]
-        - * [x] Add to New Playlist [cmp]
-          - * [x] New Playlist Title [cmp]
-          - * [x] New Playlist Description [cmp]
+* [x] Init Vue.js Project [app]
+  * [x] Basic layout design [app]
+    * [x] Add Video [cmp]
+      * [x] Video URL Input [cmp]
+      * [x] Vuetube Playlist Dropdown [cmp]
+        * [x] Add to Existing Playlist [cmp]
+          * [x] Video Info Preview [cmp]
+        * [x] Add to New Playlist [cmp]
+          * [x] New Playlist Title [cmp]
+          * [x] New Playlist Description [cmp]
     * [x] Manage Playlists [cmp]
       * [x] Playlist Title Bar [cmp]
       * [x] Playlist Favorite Toggle [cmp]
@@ -152,27 +151,36 @@ const playlistObject = {
   _id: Number,
   title: String,
   description: String,
-  dateCreated: Date,
-  totalVideos: Number,
-  completedVideos: Number,
   isFavoritePlaylist: Boolean,
+  playlistDetails: {
+    dateCreated: Date,
+    totalVideos: Number,
+    completedVideos: Number,
+  },
+  videoItems: [
+    {...videoObject},
+    {...videoObject},
+  ]
 }
 ```
 
 ### Video Object Sketch
 
-```js 
+```js
 const videoObject = {
-  video_id: String,
+  videoID: String,
   videoURL: String,
   title: String,
   description: String,
-  thumbnailSource: String,
+  thumbnail: String,
   videoStats: Object {
     views: Number,
     likes: Number,
   },
-  channel: String,
+  channel: Object {
+    name: String,
+    url: String
+  },
   userStats: {
     isFavoriteVideo: Boolean,
     hasCompleted: Boolean,
